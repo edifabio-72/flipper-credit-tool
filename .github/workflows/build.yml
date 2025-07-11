@@ -17,13 +17,10 @@ jobs:
           git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
           cp -r applications_user/ flipperzero-firmware/
           cd flipperzero-firmware
-          ./fbt applications_user/credit_tool
-
-      - name: Find compiled .fap (debug)
-        run: find flipperzero-firmware -name "*.fap"
+          ./fbt credit_tool
 
       - name: Upload compiled .fap
         uses: actions/upload-artifact@v4
         with:
           name: compiled-fap
-          path: flipperzero-firmware/build/f7-firmware-D/.extapps/credit_tool.fap
+          path: flipperzero-firmware/dist/f7/credit_tool.fap
