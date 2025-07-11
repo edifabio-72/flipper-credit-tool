@@ -1,0 +1,10 @@
+Import("env")
+
+app = env.AddApp(
+    appid = "credit_tool",
+    name = "Credit Tool",
+    apptype = "app",
+    entry_point = "credit_tool",
+    source = ["credit_tool.c"],
+    requires = ["gui"],
+)
