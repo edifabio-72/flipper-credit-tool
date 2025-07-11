@@ -23,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: compiled-fap
-          path: flipperzero-firmware/build/f7-apps/${{ github.event.repository.name }}.fap
+          path: flipperzero-firmware/build/f7-apps/applications_user/credit_tool.fap
