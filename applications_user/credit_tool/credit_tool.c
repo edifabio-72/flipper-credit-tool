@@ -1,5 +1,4 @@
 #include <furi.h>
-HEAD
 #include <gui/gui.h>
 
 int32_t credit_tool(void* p) {
@@ -18,10 +17,5 @@ int32_t credit_tool(void* p) {
 
     furi_record_close("gui");
 
-
-int32_t credit_tool_app(void* p) {
-    UNUSED(p);
-    printf("Hello from Credit Tool!\n");
-	0609ada (Setup CI for Credit Tool)
     return 0;
 }
