@@ -1,0 +1,38 @@
+name: Build credit_tool app
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git python3 python3-pip python3-venv gcc scons build-essential unzip
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install ufbt
+
+      - name: Clone Flipper firmware
+        run: |
+          git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
+          cp -r applications_user/credit_tool flipperzero-firmware/applications_user/
+
+      - name: Build credit_tool
+        run: |
+          cd flipperzero-firmware
+          source ../.venv/bin/activate
+          ufbt build applications_user/credit_tool
+
+      - name: Upload compiled .fap
+        uses: actions/upload-artifact@v3
+        with:
+          name: credit_tool.fap
+          path: flipperzero-firmware/build/f7-firmware-D/.extapps/credit_tool.fap
