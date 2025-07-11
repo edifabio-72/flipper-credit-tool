@@ -15,7 +15,7 @@ jobs:
       - name: Clone Flipper Zero Firmware
         run: |
           git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
-          cp -r applications_user ./flipperzero-firmware/
+          cp -r applications_user/* flipperzero-firmware/applications_user/
           cd flipperzero-firmware
           ./fbt fap_credit_tool
 
@@ -24,19 +24,3 @@ jobs:
         with:
           name: compiled-fap
           path: flipperzero-firmware/build/f7-apps/${{ github.event.repository.name }}.fap
-
-     - name: Checkout your repo
-       uses: actions/checkout@v4
-
-     - name: Clone Flipper Zero Firmware
-       run: |
-         git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
-         cp -r applications_user/* flipperzero-firmware/applications_user/
-         cd flipperzero-firmware
-         ./fbt fap_credit_tool
-
-     - name: Upload compiled .fap
-       uses: actions/upload-artifact@4
-       with:
-         name: compiled-fap
-         path: flipperzero-firmware/build/f7-apps/${{ github.event.repository.name }}.fap
