@@ -42,4 +42,3 @@ jobs:
       with:
         name: compiled-fap
         path: flipperzero-firmware/build/f7-apps/${{ github.event.repository.name }}.fap
-        0609ada (Setup CI for Credit Tool)
