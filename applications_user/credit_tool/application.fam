@@ -1,3 +1,4 @@
+HEAD
 App(
     appid="credit_tool",
     name="Credit Tool",
@@ -6,3 +7,6 @@ App(
     requires=["gui"],
     stack_size=1024,
 )
+
+APP_ID=credit_tool
+0609ada (Setup CI for Credit Tool)
