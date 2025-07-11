@@ -15,7 +15,7 @@ jobs:
       - name: Clone Flipper Zero Firmware
         run: |
           git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
-          cp -r applications_user/* flipperzero-firmware/applications_user/
+          cp -r applications_user/credit_tool flipperzero-firmware/applications_user/
           cd flipperzero-firmware
           ./fbt credit_tool  # ✅ fix target name here
 
