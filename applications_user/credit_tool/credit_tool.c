@@ -16,6 +16,5 @@ int32_t credit_tool(void* p) {
     view_port_free(view_port);
 
     furi_record_close("gui");
-
     return 0;
 }
