@@ -22,5 +22,5 @@ jobs:
       - name: Upload compiled .fap
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-fap
-          path: flipperzero-firmware/dist/f7/credit_tool.fap
+           name: compiled-fap
+           path: flipperzero-firmware/build/f7-apps/fap_credit_tool.fap
