@@ -2,36 +2,25 @@ name: Build Flipper App
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y python3 python3-pip qflipper scons
+      - name: Checkout your repo
+        uses: actions/checkout@v4
 
       - name: Clone Flipper Zero Firmware
-        run: git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
-
-      - name: Copy your app into the firmware
-        run: cp -r applications_user/ flipperzero-firmware/
-
-      - name: Build Flipper App
         run: |
+          git clone --recursive https://github.com/flipperdevices/flipperzero-firmware.git
+          cp -r applications_user/ flipperzero-firmware/
           cd flipperzero-firmware
           ./fbt fap_applications_user_credit_tool
 
       - name: Upload compiled .fap
         uses: actions/upload-artifact@v4
         with:
-          name: credit_tool.fap
-          path: flipperzero-firmware/build/f7-firmware-D/.extapps/credit_tool.fap
+          name: compiled-fap
+          path: flipperzero-firmware/build/f7-apps/apps_user/credit_tool.fap
