@@ -28,7 +28,7 @@ jobs:
       - name: Build Flipper App
         run: |
           cd flipperzero-firmware
-          ./fbt credit_tool
+          ./fbt fap_applications_user_credit_tool
 
       - name: Upload compiled .fap
         uses: actions/upload-artifact@v4
