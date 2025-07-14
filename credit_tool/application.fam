@@ -1,6 +1,8 @@
-App(
-    name: "Credit Tool",
-    description: "Uno strumento per la gestione del credito su Flipper Zero.",
-    icon: "assets/icon.png",
-    entry: "credit_tool.c"
-)
+{
+  "appid": "credit_tool",
+  "name": "Credit Tool",
+  "apptype": "app",
+  "entry_point": "credit_tool",
+  "requires": ["gui"],
+  "stack_size": 1024
+}
