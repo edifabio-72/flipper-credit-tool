@@ -1,6 +1,5 @@
 App(
     appid="credit_tool",
     name="Credit Tool",
-    entry="credit_tool.c",
     version="1.0.0"
 )
