@@ -1,8 +1,6 @@
-{
-  "appid": "credit_tool",
-  "name": "Credit Tool",
-  "apptype": "app",
-  "entry_point": "credit_tool",
-  "requires": ["gui"],
-  "stack_size": 1024
-}
+App(
+    appid="credit_tool",
+    name="Credit Tool",
+    entry="credit_tool.c",
+    version="1.0.0"
+)
