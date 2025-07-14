@@ -1,0 +1,6 @@
+App(
+    name: "Credit Tool",
+    description: "Uno strumento per la gestione del credito su Flipper Zero.",
+    icon: "assets/icon.png",
+    entry: "credit_tool.c"
+)
