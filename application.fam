@@ -1,4 +1,5 @@
 App(
     appid="credit_tool",
-    name="Credit Tool"
+    name="Credit Tool",
+    apptype="fap"
 )
